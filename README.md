@@ -10,7 +10,14 @@ Differences between design and architecture patterns reflect their different use
 
 ### Type Of Application Landscape Patterns
 - Monolith
-
+**Advantages**:
+  - Easy to understand, implement & test
+  - Easy Deployment
+  - Ideal for limited Scope
+ **Disadvantage**: (As application starts to grow)
+  - Tight Coupling (Making it harder to move pieces of logic to other applications later
+  - Easily leads to complex code (developer find it hard to modify or extend the application)
+  - Can leads to **One size fits all for every subdomain**
 
 - N-tier
 
