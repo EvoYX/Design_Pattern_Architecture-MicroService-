@@ -5,6 +5,7 @@ Differences between design and architecture patterns reflect their different use
 **Architecture Patterns** cocurs at higher level, no longer look at small piece of application but what defines the application.
 
 **Design Pattern** dont tell us how the application should build, it only tell us what a specfic piece of code must do & what other piece of code should interact with it.
+<br>
 ![image](https://user-images.githubusercontent.com/56182367/186626222-eb0cdf76-5db9-41a0-83bc-abba4b9926ca.png)
 
 ### Type Of Application Landscape Patterns
@@ -36,7 +37,7 @@ Application Structure Patterns:
 - Event Sourcing
 - Command Query Responsibility Segregation & event sourcing combined
 
-**User Interface pattern (getting into details of how the user interacts with the application)
+**User Interface pattern (getting into details of how the user interacts with the application)**
 - Model-view-controller (MVC)
 - Model-view-presenter (MVP)
 - Model-view-viewmodel(MVVM)
