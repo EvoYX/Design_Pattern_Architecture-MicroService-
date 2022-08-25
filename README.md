@@ -9,12 +9,14 @@ Differences between design and architecture patterns reflect their different use
 ![image](https://user-images.githubusercontent.com/56182367/186626222-eb0cdf76-5db9-41a0-83bc-abba4b9926ca.png)
 
 ### Type Of Application Landscape Patterns
-- Monolith
-**Advantages**:
+- Monolith: <br>Monolithic application describes a single-tiered software application in which the user interface and data access code are combined into a single program from a single platform. A monolithic application is self-contained and independent from other computing applications
+<br>**Advantages**:
   - Easy to understand, implement & test
   - Easy Deployment
   - Ideal for limited Scope
- **Disadvantage**: (As application starts to grow)
+
+
+  **Disadvantage**: (As application starts to grow)
   - Tight Coupling (Making it harder to move pieces of logic to other applications later
   - Easily leads to complex code (developer find it hard to modify or extend the application)
   - Can leads to **One size fits all for every subdomain**
