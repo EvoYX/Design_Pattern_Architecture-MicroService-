@@ -21,7 +21,7 @@ Differences between design and architecture patterns reflect their different use
   - Easily leads to complex code (developer find it hard to modify or extend the application)
   - Can leads to **One size fits all for every subdomain**
 
-- N-tier
+- N-tier: <br> It splits up the application into mulitple tiers. Each tier is resposible for a certain function to perform specific task,and it can be physically separated from the other tiers. Common N-tier application: 3-Tier (Presentation tier, Business logic tier, Data tier)
 
 
 - Service-oriented
