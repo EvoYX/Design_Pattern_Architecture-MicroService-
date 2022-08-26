@@ -117,8 +117,9 @@ Ans: **Application Structure Patterns**
 
 **Application Structure Patterns**are a category of patterns that defines how a single executable should be built.It is about the structure of a single exectuable and it can be part of a large application landscape.
 
-Application Structure Patterns:
-- Layered:
+**Application Structure Patterns:**
+
+- **Layered:**
   **Advanatages:**
   - Well known among developers
   - Easy to organize
@@ -131,7 +132,8 @@ Application Structure Patterns:
   **Example:**<br>
   ![image](https://user-images.githubusercontent.com/56182367/186835161-4c7e5d2b-d93d-4234-a601-38ace9b022e3.png)
 
-- Microkernel
+- **Microkernel:** It's also called the plugin pattern.
+
 - Command Query Responsibility Segregation (CQRS)
 - Event Sourcing
 - Command Query Responsibility Segregation & event sourcing combined
