@@ -75,13 +75,40 @@ Differences between design and architecture patterns reflect their different use
 **Example:**<br>
 ![image](https://user-images.githubusercontent.com/56182367/186804301-db5c5d51-8a6c-4457-9106-2d03889f6515.png)
 
+- **Serverless:** Serverless architecture is an approach to software design that allows developers to build and run services without having to manage the underlying infrastructure. Developers can write and deploy code, while a cloud provider provisions servers to run their applications, databases, and storage systems at any scale. It can either have **Backend** as a service or **Function** as a service.
 
+  **Advantages:**
+  - Scale very easily(if there's a peak in the request, the platform can just spin up new instances of your function.
+  - Reduce costs in development and operation
+  - Very easy to experiment with new IDs because a new function is easily written & deployed
+  
+  **Disadvantages:**
+  - Have to work with the constraints that the vendor enforce. Eg: the vendor might stop supporting a version of framework that you using & and is not easy to switch vendor
+  - Tricky in maintain state in memory (Does not have a persistent state thus can be a problem for developers who need persistent data)
+  - Suffer from cold start as the platform has to spin up new container.
+ 
+ ### Backend as a Service(BaaS)
+ - BaaS is a previously famous cloud-based computing model, that automates and manages the backend side of a web or mobile application development. Wll still have the application in traditional sense for the business logic, but it uses alot of third party services for other concerns. Eg: Cloud Services for Authentication, External Logging Service, External Database Provider.
+  
+ ### Function as a Service (FaaS)
+ FaaS or Function as a Service is a platform that lets you run self-contained functions (code snippets) in the cloud.It Helps developers in creating or updating codes on the fly that could be executed with any interaction with its element on the page.
 
+ ![image](https://user-images.githubusercontent.com/56182367/186810512-26fc7c32-e609-4879-81f5-b2abe9d42a9a.png)
 
-- **Serverless**
+  ![image](https://user-images.githubusercontent.com/56182367/186809152-b599b830-f91d-4402-9b12-ddf1773080c5.png)
 
+- **Peer-to-peer:**
+ Are a network of applications that communicate with each other without a central server in between them. The individual application dont have to be online all the time, they can connect and disconnect as they please and this means they need to **Wait** to discover each other as they might not have fixed URLs or IP addresses. Peer-to-peer applications serve a specific purpose,they are ideal for application that want to share their resources like **processing power, data, memory or storage**.
 
-- **Peer-to-peer**
+  **Advantages:**
+  - Very cost effective because there is no central server. (Especially when organisation dont have to run all individual applications or machine.
+  - Scaling is easy. 
+  
+  **Disadvantages:**
+  - Possible security issues because the system is decentralized. (Eg: data sharing network=> Viruses can transfer more easily)
+  = Only for specific scenario.
+  - Is not easy to write this architecture.
+  - Non trival to code
 
 #### How Do We design these individual applications?
 Ans: Application Structure Patterns
