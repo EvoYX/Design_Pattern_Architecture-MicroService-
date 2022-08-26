@@ -92,7 +92,7 @@ Differences between design and architecture patterns reflect their different use
  - BaaS is a previously famous cloud-based computing model, that automates and manages the backend side of a web or mobile application development. Wll still have the application in traditional sense for the business logic, but it uses alot of third party services for other concerns. Eg: Cloud Services for Authentication, External Logging Service, External Database Provider.
   
  ### Function as a Service (FaaS)
- FaaS or Function as a Service is a platform that lets you run self-contained functions (code snippets) in the cloud.It Helps developers in creating or updating codes on the fly that could be executed with any interaction with its element on the page.
+ - FaaS or Function as a Service is a platform that lets you run self-contained functions (code snippets) in the cloud.It Helps developers in creating or updating codes on the fly that could be executed with any interaction with its element on the page.
 
  ![image](https://user-images.githubusercontent.com/56182367/186810512-26fc7c32-e609-4879-81f5-b2abe9d42a9a.png)
 
