@@ -109,13 +109,28 @@ Differences between design and architecture patterns reflect their different use
   = Only for specific scenario.
   - Is not easy to write this architecture.
   - Non trival to code
+![image](https://user-images.githubusercontent.com/56182367/186834080-fd3bcf50-4623-4d2b-a938-b296603242af.png)
+
 
 #### How Do We design these individual applications?
-Ans: Application Structure Patterns
+Ans: **Application Structure Patterns**
+
 **Application Structure Patterns**are a category of patterns that defines how a single executable should be built.It is about the structure of a single exectuable and it can be part of a large application landscape.
 
 Application Structure Patterns:
-- Layered
+- Layered:
+  **Advanatages:**
+  - Well known among developers
+  - Easy to organize
+  
+  **Disadvantages:**
+  - Can lead to monolithic applications that makes it hard to maintain
+  - Need to write lots of coede
+  - Because it is separate layer, it can be difficult to take a specific business functionality and split it off into a new application.
+  
+  **Example:**<br>
+  ![image](https://user-images.githubusercontent.com/56182367/186835161-4c7e5d2b-d93d-4234-a601-38ace9b022e3.png)
+
 - Microkernel
 - Command Query Responsibility Segregation (CQRS)
 - Event Sourcing
