@@ -132,9 +132,48 @@ Ans: **Application Structure Patterns**
   **Example:**<br>
   ![image](https://user-images.githubusercontent.com/56182367/186835161-4c7e5d2b-d93d-4234-a601-38ace9b022e3.png)
 
-- **Microkernel:** It's also called the plugin pattern.
+- **Microkernel:** It's also called the plugin pattern.The application consist of a piece of core logic that can be extended to plugins. The core defines the contracts that the extension need to adhere(believe in and follow the practices of) but other than that, the core doesnt need to know much about the extensions.
+- Great use cases are Task Scheduler, Workflow, Data processing applications, browser extension, plugin for graphic design applications.
 
-- Command Query Responsibility Segregation (CQRS)
+  **Advanatages:**
+  - Great flexibility (Don't need to know the required features upfront because it can be added as extension later)
+  - Clean separation from the core logic
+  - Separate teams at their own pace and own style
+  - Add and remove functionality at runtime (don't need to restart the core)
+  
+  **Disadvantages:**
+  - Core API might not fit future plugins
+  - Can the plugins be trusted? (the core must also trust the extension but it is possible that the plugin destroy the entire application)
+  - Not always clear what belongs in the core and what belongs to the extension.
+
+
+![image](https://user-images.githubusercontent.com/56182367/186848106-77e730c9-16be-4fea-94f8-41d094c66b3d.png)
+
+**Example:**<br>
+![image](https://user-images.githubusercontent.com/56182367/186848248-1ba590bb-dbd5-452d-9fb3-688959ab9247.png)
+![image](https://user-images.githubusercontent.com/56182367/186848352-27bea782-41a1-4dac-b75d-ed7704677781.png)
+
+- **Command Query Responsibility Segregation (CQRS):** Is a pattern that has two entirely separate models.It allows for scenario-specific queries that could improve performance and reduce the amount of complex queries you have. It could even have separate database for your queries.However it requires us to synchronize the tables or database. It is often implement together with event sourcing.
+  - Two Models: 
+      - Read/query
+      - Write/command
+![image](https://user-images.githubusercontent.com/56182367/186854115-28b48839-06c0-42b5-be62-1aeffd46ede8.png)
+  **Advanatages:**
+  - Simpler Queries (eg: less join statement)
+  - Faster and more scalable read queries
+  - Easier to communicate with stakeholders
+  
+  **Disadvantages:**
+  - Added complexity
+  - Learning curve 
+  - Possiblity of data inconsistencies (May have small delay between the read database & the write database)
+  - Eventual consistency. (The database will be insync but not immediately. Eg: UI might not be updated immediately after the user made changes)
+
+**Example:**<br>
+![image](https://user-images.githubusercontent.com/56182367/186855325-5d0a4ad5-02c2-42b5-9d41-fc798e111ca7.png)
+![image](https://user-images.githubusercontent.com/56182367/186856334-87f08b21-e4b9-454a-8035-45382523aa2c.png)
+
+ 
 - Event Sourcing
 - Command Query Responsibility Segregation & event sourcing combined
 
