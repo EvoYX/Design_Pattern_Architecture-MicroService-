@@ -1,4 +1,5 @@
 ## Microservice Design pattern & architecture
+Reference from https://www.linkedin.com/learning/software-architecture-patterns-for-developers/event-sourcing?autoSkip=true&autoplay=true&resume=false&u=2276065
 ### What is the difference between Design Architecture & Design Pattern
 Differences between design and architecture patterns reflect their different uses. Architecture represents scaffolding, the frameworks that everything else sits upon. Design patterns represent a way to structure classes to solve common problems.
 
@@ -173,11 +174,47 @@ Ans: **Application Structure Patterns**
 ![image](https://user-images.githubusercontent.com/56182367/186855325-5d0a4ad5-02c2-42b5-9d41-fc798e111ca7.png)
 ![image](https://user-images.githubusercontent.com/56182367/186856334-87f08b21-e4b9-454a-8035-45382523aa2c.png)
 
- 
-- Event Sourcing
-- Command Query Responsibility Segregation & event sourcing combined
+- **Event Sourcing:**
+  The Event Sourcing pattern defines an approach to handling operations on data that's driven by a sequence of events, each of which is recorded in an append-only store. Application code sends a series of events that imperatively describe each action that has occurred on the data to the event store, where they're persisted. Each event represents a set of changes to the data (such as AddedItemToOrder).
+  
+     **Advanatages:**
+  - Trace of events
+  - Audit trail
+  - Business language (able to communicate with stakeholders)
+  - Event replay (if there's a bug in the handling of an event which leads to wrong state of an entity, we can simply fix the bug in the event handler. & next time we replay the events, our entity, it will be in the correct state, dont need to manually fix the data in the database)
 
-**User Interface pattern (getting into details of how the user interacts with the application)**
+  **Disadvantages:**
+  - Replay and external systems (if the events leads to update in external system, it could lead to an issue in external systems,so should be aware that replaying the events,could lead to issues in those systems. **Need to know whether is a new event or just part of a replay** ) 
+  - Event Structure changes (changes to the code of events or event handlers can be tricky.Eg: Renaming a property, the code needs a way of handling this correctly because the events stored in the database will still using the old property name)
+  - When have large amount of events that takes some time to replay, it can make the application slow to load new objects from the database (Solution of this issue will be using Snapshots)
+  - Learning curve. (many developer are unfamilar with this architecture
+  ![image](https://user-images.githubusercontent.com/56182367/186869561-b17af467-1a96-48a4-bec7-fa4d69ccf331.png)
+
+- **Command Query Responsibility Segregation & event sourcing combined:**
+  Combining CQRS & Event-sourcing pattern
+  ![image](https://user-images.githubusercontent.com/56182367/186866656-2e028687-ef25-48bf-874c-a3379037d3ad.png)
+
+   **Advanatages:**
+  - Simpler & faster queries (involves much less complex queries than without CQRS)
+  - Scalable (The event source in part give u trace of events that happed in the system)
+  - Trace of events
+  - Provide Audit trail
+  - Business langauge. (easier to write code using the language that the end user speaks, they speaks in terms of commands & events)
+  
+  **Disadvantages:**
+  - Added complexity (more components that interact with each other)
+  - Learning curve (slightly more difficult to learn)
+  - Data inconsistencies (because of CQRS pattern, read model can become out of sync)
+  - Event structure changes (eg: renaming a property, the code needs a way of handling this correctly because the events stored in the database will still using the old property name)
+
+**Why to use CQRS &/ Or Event Sourcing?**
+<br> Ans:
+- Not for simple domains.
+- You can start with event sourcing without CQRS
+- Add CQRS later
+(Because it is much harder to add Event Sourcing to the traditional system as compared to adding CQRS to an event sourcing system)
+
+### User Interface pattern (getting into details of how the user interacts with the application)
 - Model-view-controller (MVC)
 - Model-view-presenter (MVP)
 - Model-view-viewmodel(MVVM)
