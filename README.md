@@ -177,7 +177,7 @@ Ans: **Application Structure Patterns**
 - **Event Sourcing:**
   The Event Sourcing pattern defines an approach to handling operations on data that's driven by a sequence of events, each of which is recorded in an append-only store. Application code sends a series of events that imperatively describe each action that has occurred on the data to the event store, where they're persisted. Each event represents a set of changes to the data (such as AddedItemToOrder).
   
-     **Advanatages:**
+  **Advanatages:**
   - Trace of events
   - Audit trail
   - Business language (able to communicate with stakeholders)
